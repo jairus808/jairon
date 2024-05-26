@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .profiles {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .profile {
+            margin: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .section {
+            display: none;
+            margin-bottom: 50px;
+        }
+        .section.active {
+            display: block;
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            display: none;
+        }
+        .background-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .food-profile.active .background-video {
+            display: block;
+        }
+
+
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            width: 200px;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    <!-- opening animation -->
+    <title>Netflix Opening Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="netflix-intro">
+        <div class="netflix-logo">
+            <img src="images/Jai+RonFlix.png" alt="Netflix Logo">
+        </div>
+    </div>
+    <div class="container">
+        <div class="profiles">
+            <div class="profile" onclick="promptPassword('food')">
+                <img src="images/food.png" alt="Ron Feeling X">
+                <p>Food??</p>
+            </div>
+            <div class="profile" onclick="promptPassword('anything')">
+                <img src="images/anything.png" alt="Ron Feeling Y">
+                <p>Hmmm Anything else!</p>
+            </div>
+        </div>
+        <!-- Food profile -->
+        <div id="food" class="section" >
+            <!-- back to profile button -->
+            <button class="back-button" onclick="backToProfiles()">Back to Profiles</button>
+            <!-- ^^^^^^^  -->
+             <!-- background video -->
+             <div class="background-video">
+                <video autoplay muted loop>
+                    <source src="videos/food.mp4" type="videos/mp4">
+                    <source src="videos/food.MOV" type="video/MOV">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+
+
+            <h2>Continue Watching</h2>
+                <div class="items">
+                    <div class="item">
+                        <img src="URL_TO_BOK_CHOY_IMAGE" alt="Bok Choy">
+                        <p>Bok Choy</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_SRIACHA_CHICKEN_NUGGETS_IMAGE" alt="Sriracha Chicken Nuggets">
+                        <p>Sriracha Chicken Nuggets</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_LEMON_BARS_IMAGE" alt="Lemon Bars">
+                        <p>Lemon Bars</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_BRAISED_PORK_IMAGE" alt="Braised Pork">
+                        <p>Braised Pork</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_SAUTEED_CABBAGE_IMAGE" alt="Sauteed Cabbage">
+                        <p>Sauteed Cabbage</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_PEKING_DUCK_IMAGE" alt="Peking Duck in a Tupperware">
+                        <p>Peking Duck in a Tupperware</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_STEAMED_FISH_IMAGE" alt="Steamed Fish">
+                        <p>Steamed Fish</p>
+                    </div>
+                    <div class="item">
+                        <img src="URL_TO_RICE_IMAGE" alt="Rice">
+                        <p>Rice</p>
+                    </div>
+                </div>
+            <h2>Throw it Back</h2>
+                <div class="items">
+                    <div class="item">
+                        <img src="food_profile/falafel.png" alt="Falafel in Borough Market London">
+                        <p>Falafel in Borough Market London</p>
+                    </div>
+                    <div class="item">
+                        <img src="food_profile/breadpudding.png" alt="Sausage thingy Borough Market">
+                        <p>Bread Pudding!</p>
+                    </div>
+                    <div class="item">
+                        <img src="food_profile/fishnchips.png" alt="Giant Delicious Fish and Chips">
+                        <p>Giant Delicious Fish and Chips</p>
+                    </div>
+                </div>
+            
+
+            
+            <h2>Your Favorite Fruits</h2>
+                <div class="items">
+                    <div class="item">
+                        <img src="URL_TO_FRUITS_IMAGE" alt="Fruits">
+                        <p></p>
+                    </div>
+                </div>
+        </div>
+        <!-- end of food profile -->
+        <!-- Everything else profile -->
+        
+        
+
+
+        <div id="anything" class="section">
+        <button class="back-button" onclick="backToProfiles()">Back to Profiles</button>
+        <h2>Acts of Awww</h2>
+        <div class="items">
+            <div class="item">
+                <img src="URL_TO_BOSTON_FLOPPING_IMAGE" alt="The Hangout Games: Boston Flopping">
+                <p>The Hangout Games: Boston Flopping</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_POT_FICTION_IMAGE" alt="Pot Fiction">
+                <p>Pot Fiction</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_JAI_BDAY_PARTY_IMAGE" alt="Surprise, Actually">
+                <p>Surprise, Actually (Jai’s Birthday Party)</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_JAI_BDAY_DINNER_IMAGE" alt="Surprise, Actually, the prequel">
+                <p>Surprise, Actually, the prequel (Jai’s Birthday Dinner)</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_GONE_WITH_THE_CORK_IMAGE" alt="Gone with the Cork">
+                <p>Gone with the Cork</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_GYM_IMAGE" alt="Gym’ed away">
+                <p>Gym’ed away</p>
+            </div>
+        </div>
+        <h2>Sticker series</h2>
+        <div class="items">
+            <div class="item">
+                <img src="URL_TO_BABY_RON_SHRUG_IMAGE" alt="Baby Ron shrug">
+                <p>Baby Ron shrug</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_BABY_RON_EATING_FOOD_1_IMAGE" alt="Baby Ron eating food pt. 1">
+                <p>Baby Ron eating food pt. 1</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_BABY_RON_EATING_FOOD_2_IMAGE" alt="Baby Ron eating food pt. 2">
+                <p>Baby Ron eating food pt. 2</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_BABY_RON_EATING_FOOD_3_IMAGE" alt="Baby Ron eating food pt. 3">
+                <p>Baby Ron eating food pt. 3</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_BABY_JAIRUS_EATING_SPAGHETTI_IMAGE" alt="Baby Jairus eating spaghetti sloppily">
+                <p>Baby Jairus eating spaghetti sloppily</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_BIG_FAT_DONUT_IMAGE" alt="Big fat Donut or something">
+                <p>Big fat Donut or something</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_MELON_STICKER_IMAGE" alt="Melon sticker">
+                <p>Melon sticker</p>
+            </div>
+        </div>
+        <h2>More Energy</h2>
+        <div class="items">
+            <div class="item">
+                <img src="URL_TO_GUARDIANS_OF_THE_ROCK_IMAGE" alt="Guardians of the Rock: Ron’s Teachings">
+                <p>Guardians of the Rock: Ron’s Teachings</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_MAKAPU_U_IMAGE" alt="Wipeout and Prejudice (Makapu’u)">
+                <p>Wipeout and Prejudice (Makapu’u)</p>
+            </div>
+            <div class="item">
+                <img src="URL_TO_KOKO_HEAD_IMAGE" alt="Koko head: the “Trilogy”">
+                <p>Koko head: the “Trilogy”</p>
+            </div>
+        </div>
+    </div>
+
+
+       
+    <!-- end of container -->
+</div>
+    
+
+    <script src="script.js"></script>
+</body>
+ <!-- password modal -->
+ <div id="passwordModal" class="modal" style="display: none"">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Please enter the password:</p>
+        <input type="password" id="passwordInput">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+</div>
+
+</html>
